@@ -1,10 +1,10 @@
 import os
 
-env = os.environ.get("PYTHON_ENV", "dev")
+env = os.environ.get("PYTHON_ENV", "development")
 port = os.environ.get("PORT", 8080)
 
 all_environments = {
-    "dev": { "port": 5000, "debug": True, "swagger-url": "/api/swagger" },
+    "development": { "port": 5000, "debug": True, "swagger-url": "/api/swagger" },
     "production": { "port": port, "debug": False, "swagger-url": None  }
 }
 
