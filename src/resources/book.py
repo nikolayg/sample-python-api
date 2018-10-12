@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_restplus import Api, Resource, fields
-import sys, os
 
 from server.instance import server
 from models.book import book
@@ -21,6 +20,7 @@ class BookList(Resource):
     @api.expect(book)
     @api.marshal_with(book)
     def post(self):
+        api.payload["id"] = books_db[-1]["id"] + 1 if len(books_db) > 0 else 0
         books_db.append(api.payload)
         return api.payload
 
