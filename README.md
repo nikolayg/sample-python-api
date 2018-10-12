@@ -1,4 +1,4 @@
-# Set Up
+# Overview
 
 This is a simple Python API boilderplate
 using [Flask](http://flask.pocoo.org/) and [Flask-RESTPlus](https://flask-restplus.readthedocs.io/en/stable/).
