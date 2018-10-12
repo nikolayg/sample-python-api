@@ -13,6 +13,9 @@ class Server(object):
         )
 
     def run(self):
-        self.app.run(debug = environment_config["debug"], port = environment_config["port"])
+        self.app.run(
+                debug = environment_config["debug"], 
+                port = environment_config["port"]
+            )
 
 server = Server()
