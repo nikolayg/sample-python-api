@@ -17,7 +17,7 @@ class BookList(Resource):
     def get(self):
         return books_db
 
-    @api.expect(book)
+    @api.expect(book, validate=True)
     @api.marshal_with(book)
     def post(self):
         api.payload["id"] = books_db[-1]["id"] + 1 if len(books_db) > 0 else 0
@@ -41,7 +41,7 @@ class Book(Resource):
         books_db = list(filter(lambda b: b["id"] != id, books_db))
         return match
 
-    @api.expect(book)
+    @api.expect(book, validate=True)
     @api.marshal_with(book)
     def put(self, id):
         match = self.find_one(id)
